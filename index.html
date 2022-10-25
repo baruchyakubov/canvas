@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onload="onInit()">
+    <div class="filter">
+        <input onchange="getUserColor(this)" type="color">
+        <select onchange="getUserShape(this)" name="shapes" id="shapes">
+            <option value="">shapes</option>
+            <option value="line">line</option>
+            <option value="square">square</option>
+            <option value="circle">circle</option>
+            <option value="triangle">triangle</option>
+        </select>
+        <button onclick="clearCanvas()" class="clear">clear</button>
+        <button class="btn" onclick="uploadImg()">
+            Upload Image to facebook
+        </button>
+        <input
+        type="file"
+        class="file-input btn"
+        name="image"
+        onchange="onImgInput(event)"
+      />
+        <p class="user-msg"></p>
+        <div class="share-container"></div>
+        <button><a href="#" class="download" onclick="downloadDraw(this)" download="my-draw.jpg">Download</a></button>
+    </div>
+    <div class="canvas-container">
+        <canvas width="400" height="400"></canvas>
+    </div>
+    <script src="js/service.js"></script>
+    <script src="js/DOM.js"></script>
+</body>
+</html>
+
